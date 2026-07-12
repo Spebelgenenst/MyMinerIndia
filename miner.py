@@ -14,6 +14,8 @@ def login():
     username = input("username: ")
     password = input("password: ")
     auth = input("auth (optional): ")
+    if not auth:
+        auth = "none"
         
     payload = {
         "username": username,
