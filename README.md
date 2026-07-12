@@ -1,11 +1,11 @@
-# MyMinerIndia
+# MyPayIndia-miner
 A better free lightweight autoclicker for MyPayIndia. Mine MPI inr for free and make money $$$$
 
 ## Setup
 clone the repo (or you can just download it as a zip)
 ```
-git clone https://github.com/Spebelgenenst/MyMinerIndia
-cd MyMinerIndia
+git clone https://github.com/Spebelgenenst/MyPayIndia-miner
+cd MyPayIndia-miner
 ```
 create config.json
 ```
