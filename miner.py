@@ -27,20 +27,17 @@ def login():
     response = requests.post(url, json=payload).json()
 
     if not response.get("success"):
-        print("login data wrong!")
+        print("login data may be wrong!")
         quit()
 
     return response.get("data").get("session_id")
 
 def check_session(session_id):
     if session_id:
-        return
-
-
-    url=BASE_URL+"/api/v2/user/info"
-    response = requests.get(url).json()
-    if not response.get("error") == 1001:
-        return
+        url=BASE_URL+"/api/v2/user/info"
+        response = requests.get(url).json()
+        if not response.get("error") == 1001:
+            return
 
     session_id = login()
 
@@ -108,11 +105,15 @@ headers = {
 url = BASE_URL+"/accountservices/iotm/button/?click"
 
 if not sleep_time:
-    sleep_time = sleep_time_calibration(headers, url)
+    if input("Do you wanna do calibration? (Y|n)") == "n":
+        sleep_time = 0.6666666666666665
+    else:
+        sleep_time = sleep_time_calibration(headers, url)
 
     config["sleepTime"] = sleep_time
     with open('config.json', 'w') as f:
         json.dump(config, f)
+
 
 
 # the real magic

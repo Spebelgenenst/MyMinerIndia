@@ -13,7 +13,7 @@ create config.json
 ```
 nano config.json
 ```
-with the following content: (if you don't want to wait for calibration, just put the following in sleepTime: `0.6666666666666665` and **remove the brackets**)
+with the following content:
 ```
 {"sessionID": "", "sleepTime": ""}
 ```
