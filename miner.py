@@ -35,7 +35,11 @@ def login():
 def check_session(session_id):
     if session_id:
         url=BASE_URL+"/api/v2/user/info"
-        response = requests.get(url).json()
+        headers = {
+            "Authorization": f"Bearer {session_id}"
+        }   
+
+        response = requests.get(url, headers=headers).json()
         if not response.get("error") == 1001:
             return
 
