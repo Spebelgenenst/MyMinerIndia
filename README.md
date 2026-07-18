@@ -16,7 +16,7 @@ nano config.json
 ```
 with the following content:
 ```
-{"sessionID": "","xsrfToken": "", "sleepTime": ""}
+{"sessionID": "", "sleepTime": ""}
 ```
 **run the program** (first time setup may take a while)
 ```
